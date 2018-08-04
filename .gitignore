@@ -1,0 +1,20 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+#I'm using https://github.com/expressjs/express/blob/master/.gitignore as my example
+
+# OS X
+.DS_Store*
+Icon?
+._*
+
+# npm
+node_modules
+package-lock.json
+*.log
+*.gz
+
+.idea
+.idea/
+
+# environment variables
+env*.yml
