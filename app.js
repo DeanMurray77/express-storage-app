@@ -1,4 +1,24 @@
 const express = require('express');
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize(dbVars.database, dbVars.username, dbVars.password, {
+    host: dbVars.host,
+    dialect: 'mysql',
+    dialectOptions: {
+        ssl: {
+            key:
+            cert:
+            ca:
+        }
+    }
+    operatorsAliases: false,
+
+    pool: {
+        max: 5,
+        min: 0,
+        acquire: 30000,
+        idle: 10000
+    },
+})
 
 const app = express();
 
@@ -10,3 +30,4 @@ app.get('/', function(req, res) {
 }).listen(PORT);
 
 console.log("Waiting for requests. Go to LocalHost:5000");
+
