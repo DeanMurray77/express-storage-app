@@ -4,19 +4,15 @@ const sequelize = new Sequelize(dbVars.database, dbVars.username, dbVars.passwor
     host: dbVars.host,
     dialect: 'mysql',
     dialectOptions: {
-        ssl: {
-            key:
-            cert:
-            ca:
-        }
+        ssl: 'Google Cloud'
     }
     operatorsAliases: false,
 
     pool: {
         max: 5,
         min: 0,
-        acquire: 30000,
-        idle: 10000
+        acquire: 2000,
+        idle: 1000
     },
 })
 
@@ -31,3 +27,11 @@ app.get('/', function(req, res) {
 
 console.log("Waiting for requests. Go to LocalHost:5000");
 
+sequelize
+    .authenticate()
+    .then(() => {
+        console.log('Connection has been established successfully.');
+    })
+    .catch(err => {
+        console.error('Unable to connect to the database:', err);
+    });oo
