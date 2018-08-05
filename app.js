@@ -1,11 +1,12 @@
 const express = require('express');
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize(dbVars.database, dbVars.username, dbVars.password, {
+const sequelize = new Sequelize(
+    process.env.dbVars.database, process.env.dbVars.username, process.env.dbVars.password, {
     host: dbVars.host,
     dialect: 'mysql',
     dialectOptions: {
         ssl: 'Google Cloud'
-    }
+    },
     operatorsAliases: false,
 
     pool: {
@@ -34,4 +35,4 @@ sequelize
     })
     .catch(err => {
         console.error('Unable to connect to the database:', err);
-    });oo
+    });
