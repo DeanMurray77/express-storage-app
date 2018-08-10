@@ -1,8 +1,8 @@
 const express = require('express');
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize(
-    process.env.dbVars.database, process.env.dbVars.username, process.env.dbVars.password, {
-    host: dbVars.host,
+    process.env.DATABASE, process.env.USERNAME, process.env.PASSWORD, {
+    host: process.env.HOST,
     dialect: 'mysql',
     dialectOptions: {
         ssl: 'Google Cloud'
