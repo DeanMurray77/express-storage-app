@@ -4,9 +4,9 @@ const sequelize = new Sequelize(
     process.env.DATABASE, process.env.USERNAME, process.env.PASSWORD, {
     host: process.env.HOST,
     dialect: 'mysql',
-    dialectOptions: {
-        ssl: 'Google Cloud'
-    },
+//    dialectOptions: {
+//        ssl: 'Google Cloud'
+//    },
     operatorsAliases: false,
 
     pool: {
